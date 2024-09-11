@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Open_Library.Models.CHUDE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <style>
+        body {
+            background-color: #E0F7FA; /* Xanh lá cây nhạt */
+            color: #333333; /* Màu chữ xám đậm */
+        }
+
+    </style>
+</head>
+<h2>Index</h2>
+
+<table class="table" border="1"  width="500">
+    <tr>
+        <th align="center">
+           Mã Chủ Đề
+        </th>
+        <th align="center">
+           Tên Chủ Đề
+        </th>
+    </tr>
+
+@foreach (var item in Model) { 
+    <tr>
+        <td>@item.MaCD</td>
+        <td>@item.TenChuDe</td>
+        
+    </tr>
+}
+
+</table>
+
+<style>
+   
+    tr:nth-child(even) {
+        background-color: #D6EEEE;
+    }
+
+</style>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Open_Library.Models.NHAXUATBAN>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <style>
+        body {
+            background-color: #E0F7FA; /* Xanh lá cây nhạt */
+            color: #333333; /* Màu chữ xám đậm */
+        }
+    </style>
+</head>
+
+<h2>Index</h2>
+
+<p>
+    <h4 >@Html.ActionLink("Create New", "Create")</h4>
+</p>
+<table class="table" >
+ 
+    <tr>
+        <th>
+            Nhà Xuất Bản
+        </th>
+        <th>
+            Địa Chỉ
+        </th>
+        <th>
+            Điện Thoại
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaNXB }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaNXB }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaNXB })
+            </td>
+        </tr>
+    }
+
+</table>
+
